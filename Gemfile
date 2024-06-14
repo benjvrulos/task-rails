@@ -46,6 +46,10 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # GEMAS ADICIONALES
+gem 'bootstrap', '~> 5.3', '>= 5.3.3'
+gem "dartsass-sprockets"
+gem 'jquery-rails'
+# Gema para autenticación de usuarios
 gem 'devise', '~> 4.9', '>= 4.9.4'
 
 group :development, :test do

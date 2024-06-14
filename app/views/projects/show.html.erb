@@ -1,10 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @project %>
+<h2><%= @project.title %></h2>
 
-<div>
-  <%= link_to "Edit this project", edit_project_path(@project) %> |
+<span class="fw-bold">Lista de tareas:</span>
+<ul>
+  <li></li>
+</ul>
   <%= link_to "Back to projects", projects_path %>
+  <%= button_to "Eliminar proyecto", @project, method: :delete %>
 
-  <%= button_to "Destroy this project", @project, method: :delete %>
-</div>
