@@ -1,21 +1,29 @@
-<p style="color: green"><%= notice %></p>
 
-<h2><%= @project.title %></h2>
 
+
+
+<h1><%= @project.title %></h1>
+<div class="mx-auto">
 <span class="fw-bold">Lista de tareas:</span>
+  <% if @project.tasks.length > 0  %>
+    <ul class="list-group">
+      <% @project.tasks.each do |task| %>
+        <li class="list-group-item d-flex justify-content-between">
+          <p><%= task.title %></p>
+          <span><%= task.completed ? 'Completada ✅': 'Pendiente ❌'%></span>
+        </li>     
+      <% end %>
+    </ul>
+ 
+  <% else %>
+    <p>No existen tareas asociadas a este proyecto</p>
+  <% end %>
 
-<% if @project.tasks.length > 0  %>
-  <ul>
-    <% @project.tasks.each do |task| %>
-      <li><%= task.title %> <span><%= task.completed ? 'Completada': 'Pendiente'%></span></li>
-      
-    <% end %>
-  </ul>
-<% else %>
-  <p>No existen tareas asociadas a este proyecto</p>
-<% end %>
+  <div class="d-flex gap-5 justify-content-center mt-3">
+    <%= link_to "Agregar tarea", new_project_task_path(@project.id), class:"btn btn-secondary" %>
+    <%= button_to "Eliminar proyecto", @project, method: :delete,class:"btn btn-danger" %>
+  </div>
+</div>
 
-  <%= link_to "Crear tarea", new_project_task_path(@project.id) %>
-  <%= link_to "Back to projects", projects_path %>
-  <%= button_to "Eliminar proyecto", @project, method: :delete %>
-
+  
+  <%= link_to "🔙 Volver", projects_path %>
