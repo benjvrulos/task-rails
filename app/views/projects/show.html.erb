@@ -3,9 +3,19 @@
 <h2><%= @project.title %></h2>
 
 <span class="fw-bold">Lista de tareas:</span>
-<ul>
-  <li></li>
-</ul>
+
+<% if @project.tasks.length > 0  %>
+  <ul>
+    <% @project.tasks.each do |task| %>
+      <li><%= task.title %> <span><%= task.completed ? 'Completada': 'Pendiente'%></span></li>
+      
+    <% end %>
+  </ul>
+<% else %>
+  <p>No existen tareas asociadas a este proyecto</p>
+<% end %>
+
+  <%= link_to "Crear tarea", new_project_task_path(@project.id) %>
   <%= link_to "Back to projects", projects_path %>
   <%= button_to "Eliminar proyecto", @project, method: :delete %>
 
