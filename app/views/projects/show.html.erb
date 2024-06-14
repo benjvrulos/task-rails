@@ -4,18 +4,17 @@
 
 <h1><%= @project.title %></h1>
 <div class="mx-auto">
-<span class="fw-bold">Lista de tareas:</span>
+<span class="fw-bold fs-4">Listado de tareas:</span>
   <% if @project.tasks.length > 0  %>
-    <ul class="list-group">
+    <div class="list-group mt-3">
       <% @project.tasks.each do |task| %>
-        <li class="list-group-item d-flex justify-content-between">
-
-          <%= link_to "Ver tarea", project_task_path(@project.id,task.id) %>          
-          <p><%= task.title %></p>
-          <span><%= task.completed ? 'Completada ✅': 'Pendiente ❌'%></span>
-        </>     
+          
+          <%= link_to project_task_path(@project.id,task.id), class:"list-group-item list-group-item-action d-flex justify-content-between px-5 py-3" do%>          
+            <%= task.title %>
+            <span><%= task.completed ? 'Completada ✅': 'Pendiente ❌'%></span>
+          <% end %>
       <% end %>
-    </ul>
+    </div>
  
   <% else %>
     <p>No existen tareas asociadas a este proyecto</p>

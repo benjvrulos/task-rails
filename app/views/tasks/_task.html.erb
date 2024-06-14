@@ -1,12 +1,8 @@
 <div id="<%= dom_id task %>">
-  <p>
-    <strong>Title:</strong>
-    <%= task.title %>
-  </p>
 
   <p>
-    <strong>Completed:</strong>
-    <%= task.completed %>
+    <strong>Estado:</strong>
+    <%= task.completed ? 'Completado ✅' : 'Pendiente ❌' %>
   </p>
 
   <p>
@@ -14,9 +10,10 @@
     <%= task.project_id %>
   </p>
 
-
-  <%= button_to "Borrar tarea", project_task_path(task.project.id,task.id), method: :delete,class:"btn btn-danger"%>
-   
+  <div class="d-flex gap-5 justify-content-center mt-3">
+    <%= link_to "Editar tarea", edit_project_task_path(task.project.id,task.id), class:"btn btn-secondary" %>
+    <%= button_to "Borrar tarea", project_task_path(task.project.id,task.id), method: :delete,class:"btn btn-danger"%>
+  </div> 
 </div>
 
 
