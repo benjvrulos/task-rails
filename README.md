@@ -21,8 +21,4 @@ Aplicación en Ruby on Rails 7 con PosgreSQL 16 para gestionar proyectos y tarea
   - rails db:migrate
   - rails server
 
-* Database creation
-
-* Database initialization
-
 
