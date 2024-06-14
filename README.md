@@ -18,6 +18,7 @@ Aplicación en Ruby on Rails 7 con PosgreSQL 16 para gestionar proyectos y tarea
   - gem install rails (SOLAMENTE SI NO ESTÁ INSTALADO RAILS EN TU SISTEMA OPERATIVO)
   - bundle install
   - rails db:create
+  - rails db:migrate
   - rails server
 
 * Database creation
