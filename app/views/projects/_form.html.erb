@@ -11,18 +11,21 @@
     </div>
   <% end %>
 
+
+  <div class="row">
+    <div class="col-sm-12 col-md-9 col-lg-4">
+      <label class="form-label">Nombre de Proyecto</label>
+      <%= form.text_field :title , class:"form-control"%>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-sm-12 col-md-9 col-lg-4">
+      <label class="form-label">Descripción</label>
+      <%= form.text_field :description, class:"form-control" %>
+    </div>
+  </div>
   <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.submit 'Crear proyecto', class:"btn btn-secondary" %>
   </div>
 
-   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
-  </div>
-
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>
