@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
   # RUTA PRINCIPAL
-  root 'home#index'
+  authenticated :user do
+    root to: 'projects#index', as: :authenticated_root
+  end
+  root to: redirect('/users/sign_in')
 
   # RUTAS PARA AUTENTICACIÓN DE USUARIOS
+
   devise_for :users
 
   # RUTAS PARA GESTIÓNN DE PROYECTOS Y TAREAS RESPECTIVAS
