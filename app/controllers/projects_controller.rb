@@ -59,10 +59,11 @@ class ProjectsController < ApplicationController
     end
   end
 
+
+  # Función para que solo el usuario ejecute acciones sobre su proyecto
   def correct_user
     @project = current_user.projects.find_by(id:params[:id])
     redirect_to projects_path, notice:"Permission denied" if @project.nil?
-
   end
 
   private

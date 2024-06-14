@@ -51,7 +51,7 @@ gem 'bootstrap', '~> 5.3', '>= 5.3.3'
 gem "dartsass-sprockets"
 gem 'jquery-rails'
 
-# Gemas para iconos
+# Gemas para iconos de font-awesome
 gem 'font-awesome-sass', '~> 6.5', '>= 6.5.2'
 # Gema Devise para autenticación de usuarios
 gem 'devise', '~> 4.9', '>= 4.9.4'

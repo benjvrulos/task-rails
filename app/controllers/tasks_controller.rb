@@ -7,24 +7,24 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
-  # GET /tasks/1 or /tasks/1.json
+  # GET /projects/project_id/tasks/task_id
   def show
     @project = Project.find(params[:project_id])
 
   end
 
-  # GET /tasks/new
+  # GET /projects/project_id/tasks/new
   def new
     @project = Project.find(params[:project_id])
     @task = Task.new
 
   end
 
-  # GET /tasks/1/edit
+  # GET /projects/project_id/tasks/task_id/edit
   def edit
   end
 
-  # POST /tasks or /tasks.json
+  # POST /projects/project_id/tasks/new
   def create
     @project = Project.find(params[:project_id])
     @task = @project.tasks.new(task_params)
@@ -39,7 +39,7 @@ class TasksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /tasks/1 or /tasks/1.json
+  # PATCH/PUT /projects/project_id/tasks/task_id
   def update
     @project = Project.find(params[:project_id])
     respond_to do |format|
@@ -64,7 +64,7 @@ class TasksController < ApplicationController
     end
   end
 
-
+  # Función para que solo el usuario ejecute acciones en su proyecto y tareas asociadas
   def correct_user
     @project = current_user.projects.find_by(id:params[:project_id])
     redirect_to projects_path, alert:"Permiso denegado" if @project.nil?
