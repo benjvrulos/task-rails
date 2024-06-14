@@ -8,15 +8,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <% if user_signed_in? %>
                 <li class="nav-item">
                     <%= link_to "Proyectos", projects_path, class:"nav-link"%>
                 </li>
                 <li class="nav-item">
                     <%= link_to "Nuevo Proyecto", new_project_path, class:"nav-link"%>
                 </li>
+             <% end%>
             
             </ul>
-                <div class="d-flex gap-3 align-items-center">
+            <div class="d-flex gap-3 align-items-center">
                 <% if user_signed_in? %>
                     <i class="fa-solid fa-user user-icon"></i>
                     <p class="welcome-username">Bienvenido <%= current_user.email %></p>
@@ -25,7 +27,7 @@
                     <%= link_to "Ingresar", new_user_session_path, class:"btn btn-success px-3" %>
                     <%= link_to "Registrarse", new_user_registration_path, class:"btn btn-outline-success px-3" %>
                 <% end%>
-                </div>
+            </div>
             
         </div>
     </div>

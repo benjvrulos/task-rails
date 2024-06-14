@@ -1,9 +1,13 @@
 
 <h1>Mis Proyectos💼</h1>
 
-<div class="projects-grid" id="projects">
-  <% @projects.each do |project| %>
-    <%= render project %>
-  <% end %>
-</div>
-
+<% if @projects.length> 0%>
+  <div class="projects-grid" id="projects">
+    <% @projects.each do |project| %>
+      <%= render project %>
+    <% end %>
+  </div>
+<% else %>
+  <h3>No tienes proyectos creados 😔</h3>
+  <%= link_to "Crea un proyecto", new_project_path%>
+<% end %>
