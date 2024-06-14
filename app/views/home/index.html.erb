@@ -1,2 +1,5 @@
 <h1>Tasking App</h1>
 <p>Hola Mundo!</p>
+<% if current_user %>
+  <%= button_to "Salir", destroy_user_session_path, method: :delete %>
+<% end %>
