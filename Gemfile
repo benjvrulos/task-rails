@@ -46,10 +46,14 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # GEMAS ADICIONALES
+# Gemas para Boostrap
 gem 'bootstrap', '~> 5.3', '>= 5.3.3'
 gem "dartsass-sprockets"
 gem 'jquery-rails'
-# Gema para autenticación de usuarios
+
+# Gemas para iconos
+gem 'font-awesome-sass', '~> 6.5', '>= 6.5.2'
+# Gema Devise para autenticación de usuarios
 gem 'devise', '~> 4.9', '>= 4.9.4'
 
 group :development, :test do

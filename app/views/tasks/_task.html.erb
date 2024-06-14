@@ -1,14 +1,14 @@
 <div id="<%= dom_id task %>">
 
   <p>
+    <strong>Proyecto:</strong>
+    <%= task.project.title %>
+  </p>
+  <p>
     <strong>Estado:</strong>
     <%= task.completed ? 'Completado ✅' : 'Pendiente ❌' %>
   </p>
 
-  <p>
-    <strong>Project:</strong>
-    <%= task.project_id %>
-  </p>
 
   <div class="d-flex gap-5 justify-content-center mt-3">
     <%= link_to "Editar tarea", edit_project_task_path(task.project.id,task.id), class:"btn btn-secondary" %>

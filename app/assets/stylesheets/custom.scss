@@ -2,9 +2,33 @@ h1 {
   margin-bottom: 32px;
 }
 
+/* GENERAL VIEW */
+
+.task-app {
+  padding-top: 64px;
+  position: relative;
+}
+
+/* LAYOUT NAV VIEW */
+.welcome-username {
+  margin-bottom: 0;
+  color: white;
+}
+
+/* MESSAGES NAV VIEW */
+
+.messages-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(0, 10px);
+  width: 90%;
+}
+
 /* LOGIN VIEW */
 .form-login {
-  padding: 32px 64px;
+  margin: 15px 0;
+  padding: 32px 58px;
   width: 40%;
 }
 
@@ -15,11 +39,6 @@ h1 {
 .login-links a:link,
 .login-links a:visited {
   text-decoration: none;
-}
-
-.welcome-username {
-  margin-bottom: 0;
-  color: white;
 }
 
 /* PROJECTS VIEW */
