@@ -9,9 +9,11 @@
     <ul class="list-group">
       <% @project.tasks.each do |task| %>
         <li class="list-group-item d-flex justify-content-between">
+
+          <%= link_to "Ver tarea", project_task_path(@project.id) %>          
           <p><%= task.title %></p>
           <span><%= task.completed ? 'Completada ✅': 'Pendiente ❌'%></span>
-        </li>     
+        </>     
       <% end %>
     </ul>
  
