@@ -1,8 +1,28 @@
+h1 {
+  margin-bottom: 32px;
+}
+
+/* LOGIN VIEW */
+.form-login {
+  padding: 32px 64px;
+  width: 40%;
+}
+
+.login-links {
+  align-items: center;
+}
+
+.login-links a:link,
+.login-links a:visited {
+  text-decoration: none;
+}
+
 .welcome-username {
   margin-bottom: 0;
   color: white;
 }
 
+/* PROJECTS VIEW */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
